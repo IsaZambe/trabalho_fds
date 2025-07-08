@@ -40,7 +40,6 @@ body {
 .container {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
     position: relative;
 }
 
@@ -116,7 +115,7 @@ body {
 
 .titulo__hobby {
     text-align: center;
-    margin: 0;
+    margin-bottom: 1rem;
     font-size: 1.7rem;
     color: var(--cor-destaque);
 }
