@@ -1,0 +1,328 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style-position: inside;
+}
+a {
+    text-decoration: none;
+}
+
+:root {
+    --fonte-primaria: 'Work Sans', sans-serif;
+    --cor-branca: #fefefe;
+    --cor-texto: #000000;
+    --cor-primaria: #8B008B;
+    --cor-secundaria: #D8BFD8;
+    --cor-terciaria: #F2E5F2;
+    --cor-destaque: #BA55D3;
+    --cor-de-fundo: #fcefd6;
+    --shadow-box: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--cor-de-fundo);
+    color: var(--cor-texto);
+    font-family: var(--fonte-primaria);
+}
+
+/*TEXTO*/
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+}
+
+.container__texto {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    margin: 0 2rem;
+}
+
+.titulo {
+    color: var(--cor-primaria);
+    align-self: center;
+    margin: 2rem;
+    font-size: 40px;
+}
+
+.conteudo {
+    font-size: 1.25rem;
+    text-align: justify;
+    margin: 0 2rem 2rem 2rem ;
+    grid-column: 1;
+}
+
+/*BOTÃO*/
+.container__botao {
+    max-width: 37.5rem;
+    text-align: center;
+    margin: 3rem auto;
+}
+
+.botao {
+    background-color: var(--cor-destaque);
+    color: var(--cor-branca);
+    height: 3.125rem;
+    width: 25rem;
+    border: 2px solid var(--cor-primaria);
+    border-radius: .9375rem;
+    font-size: 1.125rem;
+    font-family: var(--fonte-primaria);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.botao:hover {
+    background-color: var(--cor-primaria);
+    border: 2px solid var(--cor-texto);
+}
+
+.mensagem {
+    display: none;
+    background-color: var(--cor-de-fundo);
+    margin: 1rem;
+}
+
+#mensagem a {
+    text-decoration: underline;
+    font-weight: 700;
+    color: var(--cor-destaque);
+}
+
+#mensagem a:hover{
+    color: var(--cor-primaria);
+}
+
+/*HOBBIES*/
+.container__hobbies{ 
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.titulo__hobby {
+    text-align: center;
+    margin: 0;
+    font-size: 1.7rem;
+    color: var(--cor-destaque);
+}
+
+.lista {
+    padding-left: 2rem;
+    
+
+}
+
+.lista__item {
+    font-size: 1.25rem;
+    line-height: 1.8;
+}
+
+/*IMAGEM CLICÁVEL*/
+.container__imagem {
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    max-width: 31.25rem;
+    width: 100%;
+    
+}
+
+.titulo__imagem {
+    font-size: 1.5rem;
+    margin: 2rem;
+    color: var(--cor-destaque);
+}
+
+.imagem__hobby {
+    width: 31.25rem;
+    border-radius: 3.125rem;
+    transition: transform 0.3s ease;
+}
+
+.imagem__hobby:hover {
+    transform: scale(1.03);
+    
+}
+
+.legenda__hobby {
+    text-align: center;
+    text-decoration: none;
+    color: var(--cor-texto);
+}
+
+.legenda__hobbie:hover {
+    color: var(--cor-destaque);
+}
+
+/*TABELA*/
+.container__tabela {
+    max-width: 31.25rem;
+    width: 100%;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    flex: 1;
+    
+}
+
+.tabela__paises {
+    width: 100%;
+    box-shadow: var(--shadow-box);
+    border-radius: 1.25rem;
+}
+.titulo__tabela {
+    color: var(--cor-destaque);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.tabela__item {
+    background-color: var(--cor-secundaria);
+    font-size: 1.125rem;
+    text-align: center;
+    border-radius: 1.25rem 1.25rem 0 0;
+    padding: .25rem;
+}
+
+.foto__pais {
+    width: 25rem;
+    border-radius: 1.25rem;
+    display: block;
+    box-shadow: var(--shadow-box);
+    transition: transform 0.3s ease;
+}
+
+.foto__pais:hover {
+    transform: scale(1.03);
+}
+
+.linha {
+    background-color: var(--cor-terciaria);
+}
+
+.celula__pais {
+    padding: .25rem;
+    font-size: 18px;
+    text-align: center;
+}
+
+.container__secundario {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 3rem;
+    padding: 1rem;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    
+}
+
+
+
+/*RESPONSIVIDADE*/
+
+@media (max-width: 1200px) {
+    .container__secundario {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .container__imagem, 
+    .container__tabela {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .titulo {
+        font-size: 32px;
+        text-align: center;
+        margin: 1rem;
+    }
+    
+    .conteudo {
+        font-size: 1rem;
+        margin: 0 1rem 1rem 1rem;
+    }
+    
+    .container__principal {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .container__hobbies {
+        margin: 2rem 1rem;
+        grid-column: 1;
+    }
+    
+    .botao {
+        width: 100%;
+        max-width: 25rem;
+    }
+    
+    .imagem__hobby {
+        width: 100%;
+        max-width: 31.25rem;
+    }
+    
+    .foto__pais {
+        width: 100%;
+        max-width: 25rem;
+    }
+    
+    .tabela__paises {
+        width: 100%;
+    }
+    
+    .celula {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .container__texto {
+        display: grid;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .titulo {
+        font-size: 28px;
+    }
+    
+    .container__botao {
+        margin: 2rem auto;
+    }
+    
+    .titulo__hobby,
+    .titulo__imagem,
+    .titulo__tabela {
+        font-size: 1.3rem;
+    }
+    
+    .lista__item {
+        font-size: 1rem;
+    }
+    
+    .imagem__hobby {
+        border-radius: 1.5rem;
+    }
+}
